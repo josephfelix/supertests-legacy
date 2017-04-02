@@ -1,0 +1,21 @@
+body {
+    background-color: #EEEEEE;
+    padding-top: 85px;
+    font-family: 'Lato', sans-serif;
+}
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    height: 65px;
+    -moz-box-shadow: 1px 2px 16px #d4d4d4;
+    -webkit-box-shadow: 1px 2px 16px #d4d4d4;
+    box-shadow: 1px 2px 16px #d4d4d4;
+}
+
+header h1 {
+    line-height: 22px;
+}
