@@ -8,8 +8,10 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/toptestes.css') }}" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+    <!-- Angular 1.6 -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
 </head>
 
 <body>
