@@ -1,6 +1,6 @@
 @include('index.header')
 
-<div class="container">
+<div class="container" ng-controller="IndexController">
     Inicio
 </div>
 
