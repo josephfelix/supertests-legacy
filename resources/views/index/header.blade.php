@@ -7,6 +7,7 @@
     <title>View Template that use Bootstrap</title>
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/toptestes.css') }}" />
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
@@ -24,11 +25,13 @@
     <!-- Controllers -->
     <script type="text/javascript" src="{{ asset('js/controllers/IndexController.js') }}"></script>
 
-    <script>
+    <script type="text/javascript">
+        window.logado = <?php echo (int)app('request')->session()->has('logged'); ?>;
         window.fbAsyncInit = function() {
             FB.init({
                 appId      : '{{env('FB_APP_ID')}}',
                 xfbml      : true,
+                cookie     : true,
                 version    : 'v2.8'
             });
             FB.AppEvents.logPageView();
@@ -48,8 +51,10 @@
     <div class="fb-root"></div>
     <header>
         <div class="container">
-            <h1>
+            <h1 class="pull-left">
                 <a href="{{ url('/') }}">TopTestes.com</a>
             </h1>
+
+            @include('partials.user_card')
         </div>
     </header>

@@ -13,4 +13,11 @@
 
 Route::get('/', 'IndexController@home');
 Route::get('/t/{guid}', 'TesteController@show');
-Route::get('/t/{guid}/r', 'TesteController@result');
+Route::post('/login', 'LoginController@login');
+Route::get('/logout', 'LoginController@logout');
+
+Route::group(['middleware' => ['login']], function () {
+    Route::get('/t/{guid}/l', 'TesteController@loading');
+    Route::get('/t/{guid}/r', 'TesteController@result');
+});
+

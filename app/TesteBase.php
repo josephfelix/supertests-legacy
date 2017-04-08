@@ -7,21 +7,26 @@ namespace App;
  */
 abstract class TesteBase implements TesteInterface
 {
+    use Traits\FBTrait;
+
+    public $titulo = 'Teste sem título';
+    public $capa = 'http://placehold.it/800x420';
+
     /**
-     * Retorna o título do teste
+     * Busca o título do teste
      * @return string
      */
     public function getTitle()
     {
-        return 'Teste sem título';
+        return $this->titulo;
     }
 
     /**
-     * Retorna o cover da imagem
+     * Busca a imagem principal do teste
      * @return string
      */
     public function getCover()
     {
-        return 'http://placehold.it/800x420';
+        return $this->capa;
     }
 }

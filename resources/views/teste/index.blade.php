@@ -1,6 +1,6 @@
 @include('teste.header')
 
-<div class="container" ng-controller="TesteController">
+<div class="container" ng-controller="TesteController" ng-init="checkConnection()">
 
     <div class="row">
 
@@ -10,12 +10,6 @@
             <div class="teste-container">
 
                 <img src="http://placehold.it/728x90"/>
-
-                <!-- Loading container -->
-                <div class="loading-container" ng-show="loading">
-                    <div class="dots-loader"></div>
-                    <p><strong>Por favor, aguarde...</strong></p>
-                </div>
 
                 <div class="teste-info" ng-show="!loading">
                     <div class="teste-shadow">
@@ -35,23 +29,12 @@
 
         <!-- Container do adsense -->
         <div class="col-lg-3 col-md-3 visible-lg visible-md">
-            <img src="http://placehold.it/300x600"/>
+            <img src="http://placehold.it/300x600" width="100%"/>
         </div>
         <!-- /Container do adsense -->
     </div>
 
-    <script type="text/ng-template" id="conectar_facebook.html">
-        <div class="modal-header">
-            <button type="button" class="close pull-right" data-dismiss="modal" aria-hidden="true" ng-click="fecharModal()">&times;</button>
-            <h4 class="modal-title pull-left" id="modal-title" align="center"><strong>CONECTE SEU FACEBOOK!!</strong></h4>
-        </div>
-        <div class="modal-body" id="conectar_facebook" align="center">
-            <p>Para realizar o teste, é necessário entrar usando sua conta do facebook, clique no botão abaixo para continuar.</p>
-            <button class="btn btn-primary btn-lg" ng-click="loginFacebook()">
-                <i class="fa fa-facebook" aria-hidden="true"></i>&nbsp;Entrar com facebook
-            </button>
-        </div>
-    </script>
+    @include('teste.modal.conectar_facebook')
 
 </div>
 

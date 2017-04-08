@@ -23,13 +23,17 @@
     </script>
 
     <!-- Controllers -->
-    <script type="text/javascript" src="{{ asset('js/controllers/TesteController.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/controllers/TesteController.js') }}?_=<?php echo time(); ?>"></script>
+    <script type="text/javascript" src="{{ asset('js/controllers/LoadingController.js') }}?_=<?php echo time(); ?>"></script>
+    <script type="text/javascript" src="{{ asset('js/controllers/ResultController.js') }}?_=<?php echo time(); ?>"></script>
 
-    <script>
+    <script type="text/javascript">
+        window.logado = <?php echo (int)app('request')->session()->has('logged'); ?>;
         window.fbAsyncInit = function() {
             FB.init({
                 appId      : '{{env('FB_APP_ID')}}',
                 xfbml      : true,
+                cookie     : true,
                 version    : 'v2.8'
             });
             FB.AppEvents.logPageView();
@@ -43,14 +47,18 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
+
 </head>
 
 <body ng-app="supertests">
     <div class="fb-root"></div>
     <header>
         <div class="container">
-            <h1>
+            <h1 class="pull-left">
                 <a href="{{ url('/') }}">TopTestes.com</a>
             </h1>
+
+            @include('partials.user_card')
+
         </div>
     </header>

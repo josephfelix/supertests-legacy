@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session as Session;
 use Intervention\Image\ImageManagerStatic as Image;
 
 /**
@@ -33,10 +35,24 @@ class TesteController extends Controller
     }
 
     /**
+     * Exibe a página de carregamento do teste
+     * @param $guid
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function loading($guid)
+    {
+        $instance = load_test($guid);
+        $title = $instance->getTitle();
+        return view('teste/loading', [
+            'title' => $title
+        ]);
+    }
+
+    /**
      * Gera o resultado do teste
      * @return mixed
      */
-    public function result()
+    public function result(Request $request)
     {
         $img = Image::canvas(800, 600);
 
