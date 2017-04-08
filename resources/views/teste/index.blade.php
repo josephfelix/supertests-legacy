@@ -11,6 +11,12 @@
 
                 <img src="http://placehold.it/728x90"/>
 
+                <!-- Loading container -->
+                <div class="loading-container" ng-show="loading">
+                    <div class="dots-loader"></div>
+                    <p><strong>Por favor, aguarde...</strong></p>
+                </div>
+
                 <div class="teste-info" ng-show="!loading">
                     <div class="teste-shadow">
                         <img src="{{$cover}}"/>

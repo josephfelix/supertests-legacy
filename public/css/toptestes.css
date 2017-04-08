@@ -311,3 +311,8 @@ header h1 a, header h1 a:hover {
     padding-right: 6px;
     margin-right: 3px;
 }
+
+.result-info {
+    text-align: center;
+    margin-top: 20px;
+}

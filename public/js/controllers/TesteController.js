@@ -4,6 +4,12 @@ angular.module('supertests')
         var scope = $scope;
 
         /**
+         * Status de carregamento do teste
+         * @type {boolean}
+         */
+        $scope.loading = false;
+
+        /**
          * Status de login do usuário no facebook
          * @type {boolean}
          */
@@ -26,6 +32,7 @@ angular.module('supertests')
          */
         $scope.iniciar = function () {
             if ($scope.connected && $window.logado) {
+                $scope.loading = true;
                 $scope.realizarTeste();
             } else {
                 $scope.abrirModal();
@@ -45,6 +52,7 @@ angular.module('supertests')
          * Realiza o login no site
          */
         $scope.loginSite = function () {
+            $scope.loading = true;
             var fields = [
                 'id', 'name', 'age_range', 'birthday', 'cover', 'email', 'favorite_teams',
                 'favorite_athletes', 'gender', 'context'
@@ -55,11 +63,13 @@ angular.module('supertests')
                     if (result.status) {
                         $window.location.href = $window.location.href + '/l';
                     } else {
+                        $scope.loading = false;
                         alert(result.result);
                     }
                 };
 
                 var errorLogin = function () {
+                    $scope.loading = false;
                     $scope.abrirModal();
                     alert('Ocorreu um erro ao fazer login, tente novamente.');
                 };

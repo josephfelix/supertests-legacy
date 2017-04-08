@@ -13,7 +13,7 @@ if (!function_exists('load_test')) {
         $instance = null;
 
         try {
-            include $_testfile;
+            include_once $_testfile;
             $classes = get_declared_classes();
             $class = end($classes);
             $instance = new $class;

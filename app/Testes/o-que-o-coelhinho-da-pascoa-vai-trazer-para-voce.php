@@ -1,8 +1,9 @@
 <?php
 namespace App\Testes;
-use App\TesteBase;
 
-class CoelhoPascoa extends TesteBase
+use Intervention\Image\ImageManagerStatic as Image;
+
+class CoelhoPascoa extends \App\TesteBase
 {
     public $titulo = 'O que o coelhinho da páscoa vai trazer para você?';
     public $capa = 'coelinho230317.jpg';
@@ -13,6 +14,9 @@ class CoelhoPascoa extends TesteBase
      */
     public function render()
     {
-        return 'teste';
+        $img = Image::make(public_path().'/upload/coelho.jpg');
+        $img->text($this->facebook->nome());
+
+        return $img;
     }
 }

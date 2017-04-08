@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\TesteBase;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session as Session;
-use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Support\Facades\DB as DB;
+use App\Models\Resultado as Resultado;
+use Mockery\CountValidator\Exception;
 
 /**
  * Class TesteController
@@ -36,29 +38,88 @@ class TesteController extends Controller
 
     /**
      * Exibe a página de carregamento do teste
+     * @param Request $request
      * @param $guid
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function loading($guid)
+    public function loading(Request $request, $guid)
     {
-        $instance = load_test($guid);
-        $title = $instance->getTitle();
+        if (!strpos($request->server('HTTP_REFERER'), $guid)) {
+            return redirect("/t/{$guid}");
+        }
+
         return view('teste/loading', [
-            'title' => $title
+            'guid' => $guid
         ]);
     }
 
     /**
-     * Gera o resultado do teste
-     * @return mixed
+     * Realiza o teste
+     * @param Request $request
+     * @param $guid
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function result(Request $request)
+    public function make(Request $request, $guid)
     {
-        $img = Image::canvas(800, 600);
+        $userid = $request->session()->get('userid');
+        $upload = public_path() . '/upload/';
 
-        // create a new empty image resource with red background
-        $img = Image::canvas(32, 32, '#ff0000');
+        $user = DB::table('usuarios')->where('userid', $userid)->first();
 
-        return $img->response('jpg');
+        $facebook = new \App\Libraries\FBLibrary($user);
+        $instance = load_test($guid);
+        $instance->setFacebook($facebook);
+
+        if (!($instance instanceof TesteBase)) {
+
+            return response()->json([
+                'status' => false
+            ]);
+
+        }
+
+        try {
+            $image = $instance->render();
+        } catch(Exception $e) {
+            die($e->getMessage());
+        }
+
+        $hash = md5(uniqid(time()));
+
+        $filename = $hash . '.jpg';
+
+        while (file_exists($upload . $filename)) {
+            $hash = md5(uniqid(time()));
+            $filename = $hash . '.jpg';
+        }
+
+        if ($image instanceof \Intervention\Image\Image) {
+            $image->save($upload . $filename);
+        }
+
+        $resultado = new Resultado();
+        $resultado->userid = $userid;
+        $resultado->result = $hash;
+        $resultado->save();
+
+        return response()->json([
+                'status' => true,
+                'hash' => $hash
+            ]);
+    }
+
+    /**
+     * Gera o resultado do teste
+     * @param Request $request
+     * @param $guid
+     * @param $hash
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function result(Request $request, $guid, $hash)
+    {
+        return view('teste/result', [
+            'guid' => $guid,
+            'hash' => $hash
+        ]);
     }
 }

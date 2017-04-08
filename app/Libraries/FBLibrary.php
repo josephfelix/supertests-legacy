@@ -1,20 +1,42 @@
 <?php
-namespace App\Traits;
+namespace App\Libraries;
 
 /**
- * Class FBTrait
- * @package App\Traits
+ * Class FBLibrary
+ * @package App\Libraries
  */
-trait FBTrait
+class FBLibrary
 {
+    /**
+     * @var
+     */
+    public $_response;
+
+    /**s
+     * FBLibrary constructor.
+     * @param $user
+     */
+    public function __construct($user)
+    {
+        $this->_response = $user;
+    }
+
+    /**
+     * Seta o usuário logado
+     * @param $user
+     */
+    public function setUser($user)
+    {
+        $this->_response = $user;
+    }
+
     /**
      * Busca o nome do usuário
      * @return mixed
      */
     public function nome()
     {
-        global $RESPONSE;
-        return $RESPONSE->name;
+        return $this->_response->name;
     }
 
     /**
@@ -23,8 +45,7 @@ trait FBTrait
      */
     public function foto()
     {
-        global $RESPONSE;
-        return 'http://graph.facebook.com/' . $RESPONSE->id . '/picture';
+        return 'http://graph.facebook.com/' . $this->_response->id . '/picture';
     }
 
     /**
@@ -33,8 +54,7 @@ trait FBTrait
      */
     public function sexo()
     {
-        global $RESPONSE;
-        return $RESPONSE->gender;
+        return $this->_response->gender;
     }
 
     /**
@@ -43,8 +63,7 @@ trait FBTrait
      */
     public function email()
     {
-        global $RESPONSE;
-        return $RESPONSE->email;
+        return $this->_response->email;
     }
 
     /**
@@ -53,8 +72,7 @@ trait FBTrait
      */
     public function nascimento()
     {
-        global $RESPONSE;
-        list($mes, $dia, $ano) = explode('/', $RESPONSE->birthday);
+        list($mes, $dia, $ano) = explode('/', $this->_response->birthday);
         return ['dia' => $dia, 'mes' => $mes, 'ano' => $ano, 'formatado' => "{$dia}/{$mes}/{$ano}"];
     }
 
@@ -64,8 +82,7 @@ trait FBTrait
      */
     public function capa()
     {
-        global $RESPONSE;
-        return $RESPONSE->cover->source;
+        return $this->_response->cover->source;
     }
 
     /**
@@ -74,10 +91,10 @@ trait FBTrait
      */
     public function atletas_favoritos()
     {
-        global $RESPONSE;
         $result = [];
 
-        foreach ($RESPONSE->favorite_athletes as $atleta) {
+        $this->_response->favorite_athletes = json_decode($this->_response->favorite_athletes);
+        foreach ($this->_response->favorite_athletes as $atleta) {
             $result[] = [
                 'id' => $atleta->id,
                 'foto' => 'http://graph.facebook.com/' . $atleta->id . '/picture',
@@ -94,10 +111,10 @@ trait FBTrait
      */
     public function times_favoritos()
     {
-        global $RESPONSE;
         $result = [];
 
-        foreach ($RESPONSE->favorite_teams as $time) {
+        $this->_response->favorite_teams = json_decode($this->_response->favorite_teams);
+        foreach ($this->_response->favorite_teams as $time) {
             $result[] = [
                 'id' => $time->id,
                 'foto' => 'http://graph.facebook.com/' . $time->id . '/picture',

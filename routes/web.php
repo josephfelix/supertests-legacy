@@ -15,9 +15,10 @@ Route::get('/', 'IndexController@home');
 Route::get('/t/{guid}', 'TesteController@show');
 Route::post('/login', 'LoginController@login');
 Route::get('/logout', 'LoginController@logout');
+Route::get('/t/{guid}/r/{hash}', 'TesteController@result');
 
 Route::group(['middleware' => ['login']], function () {
     Route::get('/t/{guid}/l', 'TesteController@loading');
-    Route::get('/t/{guid}/r', 'TesteController@result');
+    Route::post('/t/{guid}/m', 'TesteController@make');
 });
 

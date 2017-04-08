@@ -1,6 +1,6 @@
 @include('teste.header')
 
-<div class="container" ng-controller="LoadingController" ng-init="makeTest('{{$guid}}')">
+<div class="container" ng-controller="ResultController">
 
     <div class="row">
 
@@ -11,12 +11,9 @@
 
                 <img src="http://placehold.it/728x90"/>
 
-                <!-- Loading container -->
-                <div class="loading-container">
-                    <div class="dots-loader"></div>
-                    <p><strong>Por favor, aguarde...</strong></p>
+                <div class="result-info">
+                    <img src="{{asset("upload/{$hash}.jpg")}}"/>
                 </div>
-
             </div>
 
         </div>

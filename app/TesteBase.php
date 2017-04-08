@@ -7,10 +7,13 @@ namespace App;
  */
 abstract class TesteBase implements TesteInterface
 {
-    use Traits\FBTrait;
-
     public $titulo = 'Teste sem título';
     public $capa = 'http://placehold.it/800x420';
+
+    public function setFacebook($facebook)
+    {
+        $this->facebook = $facebook;
+    }
 
     /**
      * Busca o título do teste
