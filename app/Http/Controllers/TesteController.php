@@ -78,6 +78,14 @@ class TesteController extends Controller
 
         }
 
+        if ($instance->getUnique()) {
+            $hash = Resultado::where('userid', $userid)->getFirst();
+            return response()->json([
+                'status' => true,
+                'hash' => $hash->result
+            ]);
+        }
+
         try {
             $image = $instance->render();
         } catch(Exception $e) {
