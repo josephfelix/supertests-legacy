@@ -236,7 +236,8 @@ header h1 a, header h1 a:hover {
 .btn-iniciar-teste {
     padding: 20px;
     width: 100%;
-    margin-top: 50px;
+    margin-top: 15px;
+    cursor: pointer;
 }
 
 .loading-container {
@@ -252,6 +253,7 @@ header h1 a, header h1 a:hover {
     max-width: 100%;
     float: left;
     width: 100%;
+    margin-bottom: 20px;
 }
 
 .teste-shadow::before {
@@ -339,4 +341,9 @@ header h1 a, header h1 a:hover {
 
 .modal-dialog {
     margin: 0 auto;
+}
+
+.teste-description {
+    text-align: center;
+    font-size: 1.5rem;
 }

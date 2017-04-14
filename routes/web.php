@@ -19,6 +19,9 @@ Route::post('/login', 'LoginController@login');
 Route::get('/logout', 'LoginController@logout');
 Route::get('/t/{guid}/r/{hash}', 'TesteController@result');
 
+Route::get('/debug/{guid}', 'DebugController@index');
+Route::get('/debug/image/{guid}', 'DebugController@image');
+
 Route::group(['middleware' => ['login']], function () {
     Route::get('/t/{guid}/l', 'TesteController@loading');
     Route::post('/t/{guid}/m', 'TesteController@make');

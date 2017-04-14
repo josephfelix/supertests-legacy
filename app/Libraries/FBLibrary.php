@@ -32,9 +32,29 @@ class FBLibrary
 
     /**
      * Busca o nome do usuário
-     * @return mixed
+     * @return string
      */
     public function nome()
+    {
+        list($nome) = explode(' ', $this->_response->name);
+        return $nome;
+    }
+
+    /**
+     * Busca o sobrenome do usuário
+     * @return string
+     */
+    public function sobrenome()
+    {
+        list(,$sobrenome) = explode(' ', $this->_response->name);
+        return $sobrenome;
+    }
+
+    /**
+     * Busca o nome completo do usuário
+     * @return string
+     */
+    public function nome_completo()
     {
         return $this->_response->name;
     }
@@ -45,7 +65,7 @@ class FBLibrary
      */
     public function foto()
     {
-        return 'http://graph.facebook.com/' . $this->_response->id . '/picture';
+        return 'http://graph.facebook.com/' . $this->_response->userid . '/picture?type=large';
     }
 
     /**

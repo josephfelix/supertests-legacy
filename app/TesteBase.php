@@ -1,5 +1,6 @@
 <?php
 namespace App;
+use App\Libraries\FBLibrary;
 
 /**
  * Class TesteBase
@@ -13,10 +14,15 @@ abstract class TesteBase implements TesteInterface
     public $unico = false;
 
     /**
+     * @var FBLibrary
+     */
+    public $facebook;
+
+    /**
      * Altera o facebook do usuário que está realizando o teste
      * @param $facebook
      */
-    public function setFacebook($facebook)
+    public function setFacebook(FBLibrary $facebook)
     {
         $this->facebook = $facebook;
     }

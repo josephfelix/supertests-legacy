@@ -5,7 +5,7 @@ interface TesteInterface
 {
     /**
      * Renderiza o quiz
-     * @return void
+     * @return \Intervention\Image\Image
      */
     public function render();
 }

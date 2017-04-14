@@ -1,7 +1,7 @@
 <?php
 if (!function_exists('load_test')) {
 
-    function load_test($guid = '')
+    function load_test($guid, $class)
     {
         $_directory = app_path('Testes');
         $_testfile = $_directory . DIRECTORY_SEPARATOR . $guid . '.php';
@@ -14,8 +14,6 @@ if (!function_exists('load_test')) {
 
         try {
             include_once $_testfile;
-            $classes = get_declared_classes();
-            $class = end($classes);
             $instance = new $class;
         } catch (\Exception $e) {
             return redirect('/');

@@ -24,6 +24,7 @@
                             <span>{{$title}}</span>
                         </h2>
                     </div>
+                    <p class="teste-description">{{$description}}</p>
                     <button class="btn btn-success btn-lg btn-iniciar-teste" ng-click="iniciar()">Clique aqui para fazer
                         o teste!
                     </button>

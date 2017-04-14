@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Usuario;
 use App\TesteBase;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB as DB;
 use App\Models\Resultado as Resultado;
-use Mockery\CountValidator\Exception;
+use Artesaos\SEOTools\Traits\SEOTools as SEOToolsTrait;
+use App\Models\Teste as Teste;
 
 /**
  * Class TesteController
@@ -14,6 +16,8 @@ use Mockery\CountValidator\Exception;
  */
 class TesteController extends Controller
 {
+    use SEOToolsTrait;
+
     /**
      * Exibe o teste
      * @param $guid
@@ -21,18 +25,26 @@ class TesteController extends Controller
      */
     public function show($guid)
     {
-        $instance = load_test($guid);
+        // Busca o teste no banco de dados
+        $teste = Teste::where('slug', $guid)->first();
 
-        $cover = $instance->getCover();
-        $title = $instance->getTitle();
-
-        if (!filter_var($cover, FILTER_VALIDATE_URL)) {
-            $cover = asset('upload/' . $cover);
+        // Se o teste não existir, redirecione pra home
+        if (!$teste) {
+            return redirect('/');
         }
 
+        // SEO Tools
+        $this->seo()->setTitle($teste->title);
+        $this->seo()->setDescription($teste->description);
+        $this->seo()->opengraph()->setUrl(url()->current());
+        $this->seo()->opengraph()->addImage($teste->cover);
+        //
+
+        // Exibe a página do teste
         return view('teste/index', [
-            'title' => $title,
-            'cover' => $cover,
+            'title'       => $teste->title,
+            'cover'       => $teste->cover,
+            'description' => $teste->description,
         ]);
     }
 
@@ -61,14 +73,18 @@ class TesteController extends Controller
      */
     public function make(Request $request, $guid)
     {
+        set_time_limit(0);
+        ini_set('memory_limit', '1g');
+
         $userid = $request->session()->get('userid');
         $upload = public_path() . '/upload/';
 
-        $user = DB::table('usuarios')->where('userid', $userid)->first();
+        $user = Usuario::where('userid', $userid)->first();
+        $teste = Teste::where('slug', $guid)->first();
 
         $facebook = new \App\Libraries\FBLibrary($user);
-        $instance = load_test($guid);
-        $instance->setFacebook($facebook);
+
+        $instance = load_test($guid, $teste->class);
 
         if (!($instance instanceof TesteBase)) {
 
@@ -78,11 +94,18 @@ class TesteController extends Controller
 
         }
 
+        $instance->setFacebook($facebook);
+
+        // Se o teste for único resultado por usuário
         if ($instance->getUnique()) {
+
+            // Busca o resultado anterior
             $resultado = DB::table('resultados')
                 ->where('userid', $userid)
                 ->where('guid', $guid)
                 ->first();
+
+            // Se existir, então retorna ele
             if (!is_null($resultado)) {
                 return response()->json([
                     'status' => true,
@@ -93,7 +116,7 @@ class TesteController extends Controller
 
         try {
             $image = $instance->render();
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             die($e->getMessage());
         }
 
