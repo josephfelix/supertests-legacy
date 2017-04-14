@@ -12,6 +12,8 @@
 */
 
 Route::get('/', 'IndexController@home');
+Route::get('/l', 'IndexController@load');
+Route::get('/l/{limit}', 'IndexController@load');
 Route::get('/t/{guid}', 'TesteController@show');
 Route::post('/login', 'LoginController@login');
 Route::get('/logout', 'LoginController@logout');

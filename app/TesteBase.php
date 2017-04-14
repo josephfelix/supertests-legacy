@@ -9,6 +9,7 @@ abstract class TesteBase implements TesteInterface
 {
     public $titulo = 'Teste sem título';
     public $capa = 'http://placehold.it/800x420';
+    public $descricao = '';
     public $unico = false;
 
     /**
@@ -36,6 +37,15 @@ abstract class TesteBase implements TesteInterface
     public function getCover()
     {
         return $this->capa;
+    }
+
+    /**
+     * Busca a descrição do teste
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->descricao;
     }
 
     /**

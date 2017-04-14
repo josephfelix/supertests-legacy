@@ -17,6 +17,9 @@ class CreateTestesTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('cover');
+            $table->string('slug', 100)->unique();
+            $table->string('description');
+            $table->string('class');
             $table->timestamps();
         });
     }

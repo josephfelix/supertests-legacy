@@ -220,7 +220,7 @@ header {
 }
 
 header h1 {
-    line-height: 22px;
+    line-height: 1.5;
 }
 
 header h1 a, header h1 a:hover {
@@ -266,6 +266,10 @@ header h1 a, header h1 a:hover {
     box-shadow: inset -1px 2px 56px 50px rgba(0,0,0,0.54);
 }
 
+.teste-shadow img {
+    max-width: 100%;
+}
+
 .teste-title {
     text-align: center;
     color: #FF0E37;
@@ -306,6 +310,10 @@ header h1 a, header h1 a:hover {
     font-weight: bold;
 }
 
+.btn-facebook {
+    cursor: pointer;
+}
+
 .btn-facebook i {
     border-right: 1px solid #fff;
     padding-right: 6px;
@@ -315,4 +323,20 @@ header h1 a, header h1 a:hover {
 .result-info {
     text-align: center;
     margin-top: 20px;
+}
+
+.modal-dialog {
+    top: 10%;
+}
+
+.modal-footer {
+    justify-content: center;
+}
+
+.modal-backdrop {
+    background: rgba(0, 0, 0, 0.66);
+}
+
+.modal-dialog {
+    margin: 0 auto;
 }
