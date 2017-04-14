@@ -73,11 +73,8 @@ class TesteController extends Controller
      */
     public function make(Request $request, $guid)
     {
-        set_time_limit(0);
-        ini_set('memory_limit', '1g');
-
         $userid = $request->session()->get('userid');
-        $upload = public_path() . '/upload/';
+        $upload = public_path('/r/');
 
         $user = Usuario::where('userid', $userid)->first();
         $teste = Teste::where('slug', $guid)->first();

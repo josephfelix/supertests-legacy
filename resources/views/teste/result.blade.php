@@ -12,7 +12,31 @@
                 <img src="http://placehold.it/728x90"/>
 
                 <div class="result-info">
-                    <img src="{{asset("upload/{$hash}.jpg")}}"/>
+
+                    <div class="result-image">
+                        <img src="{{asset("/r/{$hash}.jpg")}}"/>
+                    </div>
+
+                    <div class="result-share">
+
+                        <div class="row">
+
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <button class="btn btn-lg btn-primary btn-facebook">
+                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                    COMPARTILHAR
+                                </button>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <a href="{{url("/t/{$guid}")}}" class="btn btn-lg btn-default">
+                                    <i class="fa fa-undo" aria-hidden="true"></i>
+                                    FAZER NOVAMENTE
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
 

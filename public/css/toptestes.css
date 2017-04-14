@@ -223,7 +223,7 @@ header h1 {
     line-height: 1.5;
 }
 
-header h1 a, header h1 a:hover {
+header h1 a, header h1 a:hover, header h1 a:focus {
     text-decoration: none;
     color: #333;
 }
@@ -231,6 +231,7 @@ header h1 a, header h1 a:hover {
 .teste-container {
     background-color: #fff;
     padding: 20px;
+    margin-bottom: 20px;
 }
 
 .btn-iniciar-teste {
@@ -346,4 +347,27 @@ header h1 a, header h1 a:hover {
 .teste-description {
     text-align: center;
     font-size: 1.5rem;
+}
+
+.result-image {
+    margin-bottom: 20px;
+}
+
+.result-share .btn {
+    cursor: pointer;
+    width: 100%;
+    padding: 30px;
+    font-size: 1.5rem;
+}
+
+.btn-default {
+    background-color: #666;
+    border-color: #eee;
+    color: #fff;
+}
+
+.btn-default:hover {
+    color: #fff;
+    background-color: #2f2f2f;
+    border-color: #eee;
 }
