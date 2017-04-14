@@ -8,7 +8,5 @@
 Homestead.json
 Homestead.yaml
 .env
-/public/upload
-!/public/upload/index.html
 /public/r
 !/public/r/index.html

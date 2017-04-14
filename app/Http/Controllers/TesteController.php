@@ -151,6 +151,16 @@ class TesteController extends Controller
      */
     public function result(Request $request, $guid, $hash)
     {
+        // Busca o teste no banco de dados
+        $teste = Teste::where('slug', $guid)->first();
+
+        // SEO Tools
+        $this->seo()->setTitle($teste->title);
+        $this->seo()->setDescription($teste->description);
+        $this->seo()->opengraph()->setUrl(url()->current());
+        $this->seo()->opengraph()->addImage(url('/r/' . $hash . '.jpg'));
+        //
+
         return view('teste/result', [
             'guid' => $guid,
             'hash' => $hash

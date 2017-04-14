@@ -27,7 +27,7 @@ class CoelhoPascoa extends \App\TesteBase
     public $unico = false;
 
     /**
-     * Renderiza o quiz
+     * Renderiza o teste
      * @return \Intervention\Image\Image
      */
     public function render()
