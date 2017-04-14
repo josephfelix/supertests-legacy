@@ -69,6 +69,25 @@ class FBLibrary
     }
 
     /**
+     * Identifica se o sexo do usuário é feminino
+     * @return bool
+     */
+    public function mulher()
+    {
+        return strtolower($this->sexo()) == 'female';
+    }
+
+    /**
+     * Identifica se o sexo do usuário é masculino
+     * @return bool
+     */
+    public function homem()
+    {
+        return strtolower($this->sexo()) == 'male';
+    }
+
+
+    /**
      * Busca o sexo do usuário
      * @return string
      */

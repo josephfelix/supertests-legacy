@@ -32,12 +32,14 @@ class CoelhoPascoa extends \App\TesteBase
      */
     public function render()
     {
+        $nome = $this->facebook->nome();
+
         $frase1 = "Coelhinho da páscoa o que\ntrazes pra mim?";
 
         // Frases
         $frases = [
-            "Talento!!! Só o esforço\nnão está dando certo.",
-            "Uma esposa!! Chega de contatinhos."
+            "você precisa de talento!!!\nSó o esforço não está dando certo.",
+            "você precisa de uma\nesposa!! Chega de contatinhos."
         ];
 
         // Foto de fundo
@@ -52,17 +54,20 @@ class CoelhoPascoa extends \App\TesteBase
         // Insere a foto do facebook
         $img->insert($photo, 'top-left', 22, 22);
 
-        // Escreve o texto na foto
+        // Escreve o texto padrão na foto
         $img->text($frase1, 271, 125, function($font) {
-            $font->file(public_path('/fonts/roboto/Roboto-Bold.ttf'));
-            $font->size(35);
+            $font->file(roboto());
+            $font->size(25);
             $font->color('#ffffff');
         });
 
-        // Escreve o texto aleatório na foto
-        $img->text(sortear($frases), 155, 310, function($font) {
-            $font->file(public_path('/fonts/roboto/Roboto-Bold.ttf'));
-            $font->size(35);
+        // Sorteia uma frase
+        $frase = $nome . ' ' . sortear($frases);
+
+        // Escreve a frase aleatória na foto
+        $img->text($frase, 155, 310, function($font) {
+            $font->file(roboto());
+            $font->size(25);
             $font->color('#ffffff');
         });
 

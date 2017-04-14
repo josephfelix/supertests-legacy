@@ -12,3 +12,16 @@ if (!function_exists('sortear')) {
     }
 
 }
+
+if (!function_exists('roboto')) {
+
+    /**
+     * Retorna a fonte roboto
+     * @return string
+     */
+    function roboto()
+    {
+        return public_path('/fonts/roboto/Roboto-Bold.ttf');
+    }
+
+}
