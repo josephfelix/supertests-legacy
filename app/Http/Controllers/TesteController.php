@@ -79,16 +79,21 @@ class TesteController extends Controller
         }
 
         if ($instance->getUnique()) {
-            $hash = Resultado::where('userid', $userid)->getFirst();
-            return response()->json([
-                'status' => true,
-                'hash' => $hash->result
-            ]);
+            $resultado = DB::table('resultados')
+                ->where('userid', $userid)
+                ->where('guid', $guid)
+                ->first();
+            if (!is_null($resultado)) {
+                return response()->json([
+                    'status' => true,
+                    'hash'   => $resultado->result
+                ]);
+            }
         }
 
         try {
             $image = $instance->render();
-        } catch(Exception $e) {
+        } catch (Exception $e) {
             die($e->getMessage());
         }
 
@@ -107,13 +112,14 @@ class TesteController extends Controller
 
         $resultado = new Resultado();
         $resultado->userid = $userid;
+        $resultado->guid = $guid;
         $resultado->result = $hash;
         $resultado->save();
 
         return response()->json([
-                'status' => true,
-                'hash' => $hash
-            ]);
+            'status' => true,
+            'hash'   => $hash
+        ]);
     }
 
     /**

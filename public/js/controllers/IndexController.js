@@ -1,5 +1,6 @@
 angular.module('supertests')
     .controller('IndexController', function($scope, $http){
+        var limit = 30;
         $scope.testes = [];
         $scope.loading = true;
         $scope.init = function() {
