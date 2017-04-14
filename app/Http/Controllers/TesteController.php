@@ -10,6 +10,9 @@ use App\Models\Resultado as Resultado;
 use Artesaos\SEOTools\Traits\SEOTools as SEOToolsTrait;
 use App\Models\Teste as Teste;
 
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+
 /**
  * Class TesteController
  * @package App\Http\Controllers
@@ -42,6 +45,7 @@ class TesteController extends Controller
 
         // Exibe a página do teste
         return view('teste/index', [
+            'id'          => $teste->id,
             'title'       => $teste->title,
             'cover'       => $teste->cover,
             'description' => $teste->description,

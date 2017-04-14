@@ -45,7 +45,8 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $exception)
     {
         // Se a página não for encontrada, redirecionar para homepage
-        if ($exception->getStatusCode() == 404) {
+        if (method_exists('getStatusCode', $exception) &&
+            $exception->getStatusCode() == 404) {
             return redirect('/');
         }
 
