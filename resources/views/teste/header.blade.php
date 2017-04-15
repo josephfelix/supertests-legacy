@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/testesweb.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/mobile.css') }}" />
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
     <!-- Angular 1.6 -->
@@ -57,11 +58,15 @@
     <div class="fb-root"></div>
     <header>
         <div class="container">
-            <h1 class="pull-left">
-                <a href="{{ url('/') }}">TestesWeb.com</a>
-            </h1>
-
-            @include('partials.user_card')
-
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-9 col-sm-9">
+                    <h1 class="pull-left">
+                        <a href="{{ url('/') }}">TestesWeb.com</a>
+                    </h1>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-3 col-sm-3">
+                    @include('partials.user_card')
+                </div>
+            </div>
         </div>
     </header>
