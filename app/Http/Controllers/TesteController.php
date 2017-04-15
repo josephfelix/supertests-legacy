@@ -164,7 +164,6 @@ class TesteController extends Controller
 
         return view('teste/result', [
             'id'   => $teste->id,
-            'url'  => url('/t/' . $guid),
             'guid' => $guid,
             'hash' => $hash
         ]);

@@ -4,11 +4,11 @@ angular.module('supertests')
         /**
          * Compartilha o resultado no facebook
          */
-        $scope.shareFacebook = function (url) {
+        $scope.shareFacebook = function () {
             FB.ui({
                 method: 'share',
                 display: 'popup',
-                href: url
+                href: window.location.href
             }, function(response){
 
             });
