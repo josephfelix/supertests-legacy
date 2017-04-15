@@ -53,9 +53,13 @@ angular.module('supertests')
          */
         $scope.loginSite = function () {
             $scope.loading = true;
-            var fields = [
+           /* var fields = [
                 'id', 'name', 'age_range', 'birthday', 'cover', 'email', 'favorite_teams',
                 'favorite_athletes', 'gender', 'context'
+            ];*/
+
+            var fields = [
+                'id', 'name', 'age_range', 'cover', 'email', 'gender', 'context'
             ];
             FB.api('/me?fields=' + fields.join(','), function (response) {
 

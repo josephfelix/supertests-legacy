@@ -19,10 +19,10 @@ class CreateUsuariosTable extends Migration
             $table->string('name');
             $table->string('email', 50);
             $table->string('gender', 10);
-            $table->string('birthday', 12);
+            $table->integer('age');
             $table->string('cover');
-            $table->string('favorite_athletes');
-            $table->string('favorite_teams');
+           // $table->string('favorite_athletes');
+            //$table->string('favorite_teams');
             $table->timestamps();
 
             $table->index(['userid', 'email'], 'userid-email-idx');

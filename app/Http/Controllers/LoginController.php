@@ -78,6 +78,10 @@ class LoginController extends Controller
             $usuario->cover = $post->cover['source'];
         }
 
+        if (isset($post->age_range)) {
+            $usuario->age = $post->age_range['min'];
+        }
+
         if (isset($post->favorite_athletes)) {
             $usuario->favorite_athletes = json_encode($post->favorite_athletes);
         }
