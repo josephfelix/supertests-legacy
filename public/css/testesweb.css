@@ -353,6 +353,10 @@ header h1 a, header h1 a:hover, header h1 a:focus {
     margin-bottom: 20px;
 }
 
+.result-image img {
+    cursor: pointer;
+}
+
 .result-share .btn {
     cursor: pointer;
     width: 100%;

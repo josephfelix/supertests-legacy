@@ -14,7 +14,7 @@
                 <div class="result-info">
 
                     <div class="result-image">
-                        <img src="{{asset("/r/{$hash}.jpg")}}"/>
+                        <img ng-click="shareFacebook()" src="{{asset("/r/{$hash}.jpg")}}"/>
                     </div>
 
                     <div class="result-share">
