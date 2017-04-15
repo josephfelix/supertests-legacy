@@ -166,6 +166,7 @@ class TesteController extends Controller
         //
 
         return view('teste/result', [
+            'id'   => $teste->id,
             'guid' => $guid,
             'hash' => $hash
         ]);

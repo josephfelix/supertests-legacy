@@ -50,6 +50,19 @@
         <!-- /Container do adsense -->
     </div>
 
+    <div class="loading-container" ng-show="loadingtestes">
+        <div class="dots-loader"></div>
+        <p><strong>Carregando...</strong></p>
+    </div>
+
+    <div class="mais-testes" ng-hide="loadingtestes" ng-init="carregarTestes('{{$id}}')">
+        <h2 align="center"><strong>Não esquece de ver esses testes também!</strong></h2>
+        <hr />
+        <div class="row">
+            @include('index.single')
+        </div>
+    </div>
+
 </div>
 
 @include('teste.footer')
