@@ -1,0 +1,75 @@
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 3rem;
+        line-height: 2;
+    }
+
+    .teste-container {
+        padding: 5px;
+    }
+
+    .media-body, .teste-description-single {
+        display: none;
+    }
+
+    .teste-title {
+        bottom: 0;
+    }
+
+    .teste-title span {
+        line-height: 1.56;
+        font-size: 2rem;
+        padding: 7px;
+    }
+
+    .btn-iniciar-teste {
+        font-size: 1.46rem;
+    }
+
+    .result-share .btn {
+        padding: 13px;
+        margin-bottom: 9px;
+    }
+
+    .teste-single {
+        height: auto;
+        margin-bottom: 10px;
+        position: relative;
+        max-width: 100%;
+        float: left;
+        width: 100%;
+    }
+
+    .teste-single .caption {
+        padding-bottom: 0;
+    }
+
+    .teste-single h3 {
+        position: absolute;
+        font-size: 1.9rem;
+        left: 0;
+        top: 0;
+        color: white;
+        font-weight: bold;
+        background: rgb(0, 0, 0);
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+    }
+
+    .teste-single .btn-fazer-teste-single {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .teste-info {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+
+}

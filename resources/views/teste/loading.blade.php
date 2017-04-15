@@ -9,7 +9,7 @@
 
             <div class="teste-container">
 
-                <img src="http://placehold.it/728x90"/>
+                <img src="http://placehold.it/728x90" width="100%"/>
 
                 <!-- Loading container -->
                 <div class="loading-container">

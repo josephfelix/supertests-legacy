@@ -201,15 +201,10 @@
 
 body {
     background-color: #EEEEEE;
-    padding-top: 85px;
     font-family: 'Lato', sans-serif;
 }
 
 header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
     width: 100%;
     background-color: #fff;
     height: 65px;
@@ -217,10 +212,12 @@ header {
     -moz-box-shadow: 1px 2px 16px #d4d4d4;
     -webkit-box-shadow: 1px 2px 16px #d4d4d4;
     box-shadow: 1px 2px 16px #d4d4d4;
+    margin-bottom: 20px;
 }
 
 header h1 {
-    line-height: 1.5;
+    line-height: 1.7;
+    margin: 0;
 }
 
 header h1 a, header h1 a:hover, header h1 a:focus {
@@ -294,23 +291,17 @@ header h1 a, header h1 a:hover, header h1 a:focus {
 }
 
 .modal-body#conectar_facebook {
-    padding: 25px;
+    padding: 11px;
+    font-size: 17px;
+    line-height: 1.4;
 }
 
-.user-card {
-    margin-top: 7px;
-}
 .user-card img {
     width: 56px;
     height: 56px;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
-}
-
-.user-card div.nome {
-    text-align: center;
-    font-weight: bold;
 }
 
 .btn-facebook {
@@ -377,5 +368,22 @@ header h1 a, header h1 a:hover, header h1 a:focus {
 }
 
 .teste-single {
-    height: 397px;
+    height: 382px;
+    padding: 0;
+}
+
+.teste-single .teste-description-single {
+    text-overflow: ellipsis;
+}
+
+.media-body {
+    width: auto;
+}
+
+li.media {
+    margin-top: 6px !important;
+}
+
+.btn-full-width {
+    width: 100%;
 }

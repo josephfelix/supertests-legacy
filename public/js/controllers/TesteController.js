@@ -102,7 +102,7 @@ angular.module('supertests')
             $uibModal.open({
                 animation: false,
                 templateUrl: 'conectar_facebook.html',
-                size: 'md',
+                size: 'sm',
                 controller: function ($scope, $uibModalInstance) {
 
                     $scope.fecharModal = function () {

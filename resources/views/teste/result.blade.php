@@ -9,12 +9,12 @@
 
             <div class="teste-container">
 
-                <img src="http://placehold.it/728x90"/>
+                <img src="http://placehold.it/728x90" width="100%"/>
 
                 <div class="result-info">
 
                     <div class="result-image">
-                        <img ng-click="shareFacebook()" src="{{asset("/r/{$hash}.jpg")}}"/>
+                        <img ng-click="shareFacebook()" src="{{asset("/r/{$hash}.jpg")}}" width="100%"/>
                     </div>
 
                     <div class="result-share">
