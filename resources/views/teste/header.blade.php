@@ -7,6 +7,8 @@
 
     {!! SEO::generate() !!}
 
+    <meta property="fb:app_id" content="{{env('FB_APP_ID')}}" />
+
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/testesweb.css') }}" />

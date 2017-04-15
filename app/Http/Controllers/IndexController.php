@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Teste;
 use Illuminate\Http\Request;
+use Artesaos\SEOTools\Traits\SEOTools as SEOToolsTrait;
 
 /**
  * Class IndexController
@@ -11,12 +12,19 @@ use Illuminate\Http\Request;
  */
 class IndexController extends Controller
 {
+    use SEOToolsTrait;
+
     /**
      * Carrega a homepage
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function home()
     {
+        // SEO Tools
+        $this->seo()->setTitle(env('TITLE'));
+        $this->seo()->setDescription('testesweb.com | seu site de testes para o facebook');
+        //
+
         return view('index/index');
     }
 
