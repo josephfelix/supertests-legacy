@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/toptestes.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/testesweb.css') }}" />
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
     <!-- Angular 1.6 -->
@@ -52,7 +52,7 @@
     <header>
         <div class="container">
             <h1 class="pull-left">
-                <a href="{{ url('/') }}">TopTestes.com</a>
+                <a href="{{ url('/') }}">TestesWeb.com</a>
             </h1>
 
             @include('partials.user_card')

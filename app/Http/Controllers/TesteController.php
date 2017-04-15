@@ -10,9 +10,6 @@ use App\Models\Resultado as Resultado;
 use Artesaos\SEOTools\Traits\SEOTools as SEOToolsTrait;
 use App\Models\Teste as Teste;
 
-error_reporting(E_ALL);
-ini_set('display_errors', 'On');
-
 /**
  * Class TesteController
  * @package App\Http\Controllers
@@ -161,7 +158,7 @@ class TesteController extends Controller
         // SEO Tools
         $this->seo()->setTitle($teste->title);
         $this->seo()->setDescription($teste->description);
-        $this->seo()->opengraph()->setUrl(url()->current());
+        $this->seo()->opengraph()->setUrl(url('/t/' . $guid));
         $this->seo()->opengraph()->addImage(url('/r/' . $hash . '.jpg'));
         //
 
