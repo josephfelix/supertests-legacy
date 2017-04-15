@@ -4,8 +4,14 @@ angular.module('supertests')
         /**
          * Compartilha o resultado no facebook
          */
-        $scope.shareFacebook = function () {
-            alert('Compartilhar!');
+        $scope.shareFacebook = function (url) {
+            FB.ui({
+                method: 'share',
+                display: 'popup',
+                href: url
+            }, function(response){
+
+            });
         };
 
         /**
