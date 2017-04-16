@@ -236,6 +236,18 @@ header h1 a, header h1 a:hover, header h1 a:focus {
     width: 100%;
     margin-top: 15px;
     cursor: pointer;
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #276b27;
+    border-color: #408a40;
+    text-shadow: 1px 2px 1px #000;
+}
+
+.btn-iniciar-teste:hover, .btn-iniciar-teste:focus, .btn-iniciar-focus:active {
+    color: #fff;
 }
 
 .loading-container {
@@ -370,6 +382,7 @@ header h1 a, header h1 a:hover, header h1 a:focus {
 .teste-single {
     height: 382px;
     padding: 0;
+    position: relative;
 }
 
 .teste-single .teste-description-single {
@@ -386,4 +399,35 @@ li.media {
 
 .btn-full-width {
     width: 100%;
+}
+
+.btn-result-facebook-top {
+    width: 100%;
+    margin-bottom: 20px;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    display: none;
+}
+
+.btn-flat-mobile {
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+.btn-fazer-teste-single {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 11px;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+.hr-teste-single {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

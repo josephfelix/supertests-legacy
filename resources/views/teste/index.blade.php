@@ -9,7 +9,16 @@
 
             <div class="teste-container">
 
-                <img src="http://placehold.it/728x90" width="100%"/>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- responsivositetesteweb.com -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-9156209932510160"
+                     data-ad-slot="8689609135"
+                     data-ad-format="auto"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
 
                 <!-- Loading container -->
                 <div class="loading-container" ng-show="loading">
@@ -25,9 +34,22 @@
                         </h2>
                     </div>
                     <p class="teste-description">{{$description}}</p>
-                    <button class="btn btn-success btn-lg btn-iniciar-teste" ng-click="iniciar('{{$guid}}')">Clique aqui para fazer
-                        o teste!
+                    <button class="btn btn-lg btn-iniciar-teste" ng-click="iniciar('{{$guid}}')">
+                        Iniciar teste
                     </button>
+
+                    <hr class="hr-teste-single" />
+
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- responsivositetesteweb.com -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-9156209932510160"
+                         data-ad-slot="8689609135"
+                         data-ad-format="auto"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
                 </div>
             </div>
 
@@ -36,7 +58,15 @@
 
         <!-- Container do adsense -->
         <div class="col-lg-3 col-md-3 visible-lg visible-md">
-            <img src="http://placehold.it/300x600" width="100%"/>
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- 300x600sitetesteweb.com -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:300px;height:600px"
+                 data-ad-client="ca-pub-9156209932510160"
+                 data-ad-slot="1166342336"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
         </div>
         <!-- /Container do adsense -->
     </div>
@@ -49,7 +79,7 @@
     </div>
 
     <div class="mais-testes" ng-hide="loadingtestes" ng-init="carregarTestes('{{$id}}')">
-        <h2 align="center"><strong>Não esquece de ver esses testes também!</strong></h2>
+        <h2><strong>Recomendados</strong></h2>
         <hr />
         <div class="row">
             @include('index.single')
