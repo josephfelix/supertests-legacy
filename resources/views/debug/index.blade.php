@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/testesweb.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/mobile.css') }}" />
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
     <!-- Angular 1.6 -->
