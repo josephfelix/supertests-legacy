@@ -79,7 +79,7 @@
     </div>
 
     <div class="mais-testes" ng-hide="loadingtestes" ng-init="carregarTestes('{{$id}}')">
-        <h2><strong>Recomendados</strong></h2>
+        <h3><strong>Recomendados</strong></h3>
         <hr />
         <div class="row">
             @include('index.single')

@@ -1,4 +1,9 @@
 @media (max-width: 768px) {
+
+    body {
+        padding-bottom: 53px;
+    }
+
     header h1 {
         font-size: 3rem;
         line-height: 2;
@@ -97,9 +102,6 @@
 }
 
 @media (max-width: 768px) and (orientation: landscape) {
-    body {
-        padding-bottom: 53px;
-    }
     .teste-single-grid {
         width: 50% !important;
         max-width: 50%;
