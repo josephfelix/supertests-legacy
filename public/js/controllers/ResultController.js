@@ -16,7 +16,8 @@ angular.module('supertests')
             FB.ui({
                 method: 'share',
                 display: 'popup',
-                href: url
+                href: url,
+                hashtag: '#TestesWeb'
             }, function (response) {
 
             });
