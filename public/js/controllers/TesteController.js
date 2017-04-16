@@ -30,10 +30,10 @@ angular.module('supertests')
         /**
          * Chamado ao usuário clicar no botão INICIAR TESTE
          */
-        $scope.iniciar = function () {
+        $scope.iniciar = function (guid) {
             if ($scope.connected && $window.logado) {
                 $scope.loading = true;
-                $scope.realizarTeste();
+                $scope.realizarTeste(guid);
             } else {
                 $scope.abrirModal();
             }
@@ -44,14 +44,15 @@ angular.module('supertests')
          * este método só é chamado se o usuário
          * estiver logado no facebook
          */
-        $scope.realizarTeste = function () {
-            $window.location.href = $window.location.href + '/l';
+        $scope.realizarTeste = function (guid) {
+            $window.location.href = '/t/' + guid + '/l';
         };
 
         /**
          * Realiza o login no site
+         * @param guid
          */
-        $scope.loginSite = function () {
+        $scope.loginSite = function (guid) {
             $scope.loading = true;
            /* var fields = [
                 'id', 'name', 'age_range', 'birthday', 'cover', 'email', 'favorite_teams',
@@ -65,7 +66,7 @@ angular.module('supertests')
 
                 var sucessoLogin = function (result) {
                     if (result.status) {
-                        $window.location.href = $window.location.href + '/l';
+                        $scope.realizarTeste(guid);
                     } else {
                         $scope.loading = false;
                         alert(result.result);
@@ -86,11 +87,11 @@ angular.module('supertests')
         /**
          * Realiza o login no facebook via JS SDK
          */
-        $scope.loginFacebook = function () {
+        $scope.loginFacebook = function (guid) {
             FB.login(function (response) {
                 if (response.authResponse) {
                     $scope.fecharModal();
-                    $scope.loginSite();
+                    $scope.loginSite(guid);
                 }
             }, {scope: 'email'});
         };

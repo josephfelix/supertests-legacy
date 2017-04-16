@@ -43,6 +43,7 @@ class TesteController extends Controller
         // Exibe a página do teste
         return view('teste/index', [
             'id'          => $teste->id,
+            'guid'        => $guid,
             'title'       => $teste->title,
             'cover'       => $teste->cover,
             'description' => $teste->description,
@@ -162,6 +163,20 @@ class TesteController extends Controller
         $this->seo()->opengraph()->addImage(url('/r/' . $hash . '.jpg'));
         //
 
+        // Se a visita vier do facebook
+        if ($request->get('fb')) {
+
+            // Exibe a página do teste
+            return view('teste/index', [
+                'id'          => $teste->id,
+                'guid'        => $guid,
+                'title'       => $teste->title,
+                'cover'       => $teste->cover,
+                'description' => $teste->description,
+            ]);
+        }
+
+        // Caso contrário, mostra o resultado
         return view('teste/result', [
             'id'   => $teste->id,
             'guid' => $guid,

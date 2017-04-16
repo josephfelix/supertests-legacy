@@ -5,11 +5,19 @@ angular.module('supertests')
          * Compartilha o resultado no facebook
          */
         $scope.shareFacebook = function () {
+            var url = window.location.href;
+
+            if (url.indexOf('?') != -1) {
+                url = url + '&fb=1';
+            } else {
+                url = url + '?fb=1';
+            }
+
             FB.ui({
                 method: 'share',
                 display: 'popup',
-                href: window.location.href
-            }, function(response){
+                href: url
+            }, function (response) {
 
             });
         };
