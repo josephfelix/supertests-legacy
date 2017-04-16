@@ -64,6 +64,18 @@
     .teste-info {
         margin-top: 10px;
     }
+
+    .teste-info .btn-iniciar-teste {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        border-radius: 0;
+        padding: 13px;
+    }
 }
 
 @media (max-width: 768px) and (orientation: portrait) {
