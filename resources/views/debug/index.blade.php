@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/testesweb.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/mobile.css') }}" />
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
 
     <!-- Angular 1.6 -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
@@ -31,7 +32,7 @@
 <header>
     <div class="container">
         <h1 class="pull-left">
-            <a href="{{ url('/') }}">TestesWeb.com - Debugger</a>
+            <a href="{{ url('/') }}">#TESTESWEB - Debugger</a>
         </h1>
     </div>
 </header>
