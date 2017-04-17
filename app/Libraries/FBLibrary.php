@@ -86,7 +86,6 @@ class FBLibrary
         return strtolower($this->sexo()) == 'male';
     }
 
-
     /**
      * Busca o sexo do usuário
      * @return string
