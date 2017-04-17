@@ -14,7 +14,7 @@ class Celebridade extends \App\TesteBase
     /**
      * Capa do teste
      */
-    public $capa = 'celebridadecapa.jpg';
+    public $capa = 'qual-celebridade-se-parece-com-voce/celebridadecapa.jpg';
 
     /**
      * Descrição do teste
@@ -31,14 +31,44 @@ class Celebridade extends \App\TesteBase
      * @return \Intervention\Image\Image
      */
     public function render()
+
     {
         // Celebridades
-        $celebridades = [
-            'jacob.jpg'
+        $celebridades_homem= [
+            'qual-celebridade-se-parece-com-voce/jacob.jpg',
+			'qual-celebridade-se-parece-com-voce/justin.jpg',
+			'qual-celebridade-se-parece-com-voce/luan.jpg',
+			'qual-celebridade-se-parece-com-voce/chris.jpg',
+			'qual-celebridade-se-parece-com-voce/van.jpg',
         ];
+		
+		
+		 // Celebridades
+        $celebridades_mulher= [
+            'qual-celebridade-se-parece-com-voce/ivete.jpg',
+		    'qual-celebridade-se-parece-com-voce/marquezine.jpg',
+			'qual-celebridade-se-parece-com-voce/shakira.jpg',
+			'qual-celebridade-se-parece-com-voce/angelina.jpg',
+			'qual-celebridade-se-parece-com-voce/rihanna.jpg',
+			
+        ];
+	    
+		// AQUI NESTE COMANDO É PARA SABER SE É HOMEM  .	
+		if ($this->facebook->homem()) {
+			
+			
+			 $celebridade = sortear($celebridades_homem);
+	
+		// AQUI NESTE COMANDO É PRA SABER SE É MULHER.
+		
+		} elseif ($this->facebook->mulher()) {
+			
+			 $celebridade = sortear($celebridades_mulher);
+	
+	    }	
 
-        // Sorteia uma celebridade
-        $celebridade = sortear($celebridades);
+        
+       
 
         // Foto que será usada para fazer a montagem
         $montagem = Image::canvas(800, 400, '#fff');
