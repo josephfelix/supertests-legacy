@@ -50,6 +50,8 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
+
+    @include('partials.analytics')
 </head>
 
 <body ng-app="supertests">

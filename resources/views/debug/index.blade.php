@@ -26,6 +26,8 @@
 
     <!-- Controllers -->
     <script type="text/javascript" src="{{ asset('js/controllers/DebugController.js') }}"></script>
+
+    @include('partials.analytics')
 </head>
 
 <body ng-app="supertests">

@@ -53,6 +53,7 @@
         }(document, 'script', 'facebook-jssdk'));
     </script>
 
+    @include('partials.analytics')
 </head>
 
 <body ng-app="supertests">
