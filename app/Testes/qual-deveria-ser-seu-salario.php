@@ -60,8 +60,9 @@ class Salario extends \App\TesteBase
         //$foto_facebook->resize(260, 400);
 
         // Insere a foto do facebook na esquerda
-		$foto_facebook->filter(new RoundFilter(100));
+		
         $foto_fundo->insert($foto_facebook, 'top-left',60,160);
+		//$foto_facebook->filter(new RoundFilter(100));  <<< ESSE COMANDO FAZ A FOTO FICAR REDONDA.
 		$nome = $this->facebook->nome();
 $foto_fundo->text($nome, 20, 125, function($font) {
             $font->file(roboto());

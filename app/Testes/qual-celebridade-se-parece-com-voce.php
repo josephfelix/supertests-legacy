@@ -19,7 +19,7 @@ class Celebridade extends \App\TesteBase
     /**
      * Descrição do teste
      */
-    public $descricao = 'Saiba agora qual famoso que mais se parece com você!';
+    public $descricao = 'Descubra agora qual celebridade se parece mais com você!';
 
     /**
      * O teste retornará o mesmo resultado para o usuário que refazer?

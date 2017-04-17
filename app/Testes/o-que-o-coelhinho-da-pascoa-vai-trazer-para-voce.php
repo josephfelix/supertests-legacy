@@ -9,17 +9,17 @@ class CoelhoPascoa extends \App\TesteBase
     /**
      * Título do teste
      */
-    public $titulo = 'O que o coelhinho da páscoa vai trazer para você?';
+    public $titulo = 'O que o coelhinho da Páscoa vai trazer pra você?';
 
     /**
      * Capa do teste
      */
-    public $capa = 'coelinho230317.jpg';
+    public $capa = 'o-que-o-coelhinho-da-pascoa-vai-trazer-para-voce/coelinho230317.jpg';
 
     /**
      * Descrição do teste
      */
-    public $descricao = 'Saiba agora o que o coelhinho da pascoa pode trazer para você!';
+    public $descricao = 'Faça o teste e veja o que o coelhinho da Páscoa vai trazer para você!';
 
     /**
      * O teste retornará o mesmo resultado para o usuário que refazer?
@@ -38,12 +38,12 @@ class CoelhoPascoa extends \App\TesteBase
 
         // Frases
         $frases = [
-            "você precisa de talento!!!\nSó o esforço não está dando certo.",
-            "você precisa de uma\nesposa!! Chega de contatinhos."
+            "você precisa de\ncomeçar a namorar!\nChega de contatinhos.",
+            "você precisa se casar\nchega de ficar enrolando."
         ];
 
         // Foto de fundo
-        $img = Image::make(public_path('/upload/resposta.jpg'));
+        $img = Image::make(public_path('upload/o-que-o-coelhinho-da-pascoa-vai-trazer-para-voce/resposta.jpg'));
 
         // Foto do facebook
         $photo = Image::make($this->facebook->foto());
