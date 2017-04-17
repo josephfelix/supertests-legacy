@@ -55,12 +55,11 @@
                     <hr class="hr-teste-single" />
 
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- responsivositetesteweb.com -->
+                    <!-- 300x250sitetesteweb.com -->
                     <ins class="adsbygoogle"
-                         style="display:block"
+                         style="display:inline-block;width:300px;height:250px"
                          data-ad-client="ca-pub-9156209932510160"
-                         data-ad-slot="8689609135"
-                         data-ad-format="auto"></ins>
+                         data-ad-slot="2643075533"></ins>
                     <script>
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
