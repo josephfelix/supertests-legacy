@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Libraries\FBLibrary as FBLibrary;
 use App\TesteBase as TesteBase;
+use Illuminate\Support\Facades\Artisan as Artisan;
 use Illuminate\Support\Facades\Response as Response;
 
 set_time_limit(0);
@@ -88,5 +89,16 @@ class DebugController extends Controller
         $response = Response::make($image->encode('jpeg'));
         $response->header('Content-Type','image/jpeg');
         return $response;
+    }
+
+    /**
+     * Envia o teste para ser publicado para todos
+     * @param $guid
+     * @return mixed
+     */
+    public function enviar($guid)
+    {
+        Artisan::call('teste:generate');
+        return response()->json(['success' => true]);
     }
 }

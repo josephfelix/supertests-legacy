@@ -1,5 +1,6 @@
 angular.module('supertests')
-    .controller('DebugController', function ($scope) {
+    .controller('DebugController', function ($scope, $http) {
+        $scope.message = '';
         $scope.coordinates = {
             top: 0,
             left: 0
@@ -33,5 +34,22 @@ angular.module('supertests')
                 left: naturalClickPosX,
                 top: naturalClickPosY
             };
+        };
+
+        $scope.enviarTeste = function(guid) {
+            if (confirm('Tem certeza que deseja fazer isso?\nATENÇÃO: Ao enviar, este teste ficará visível para todos os usuários.')) {
+                $scope.message = 'Enviando...';
+
+                var success = function() {
+                    $scope.message = 'Enviado com sucesso!';
+                };
+
+                var failure = function() {
+                    $scope.message = 'Erro ao enviar teste.';
+                };
+
+                $http.post('/debug/' + guid + '/enviar')
+                    .then(success, failure);
+            }
         };
     });
