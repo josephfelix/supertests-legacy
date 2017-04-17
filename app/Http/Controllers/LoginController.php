@@ -90,7 +90,11 @@ class LoginController extends Controller
             $usuario->favorite_teams = json_encode($post->favorite_teams);
         }
 
-        $usuario->save();
+        try {
+            $usuario->save();
+        } catch (\Exception $e) {
+
+        }
 
         $request->session()->put([
             'logged'          => true,
