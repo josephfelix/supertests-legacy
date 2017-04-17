@@ -37,6 +37,7 @@ class IndexController extends Controller
     {
         $testes = Teste::limit($limit)
             ->select('id', 'title', 'cover', 'slug', 'description', 'created_at', 'updated_at')
+            ->orderBy('created_at', 'DESC')
             ->offset(0)
             ->get();
         return response()->json($testes);
