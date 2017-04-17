@@ -4,12 +4,12 @@ namespace App\Testes;
 use App\Libraries\Filters\RoundFilter;
 use Intervention\Image\ImageManagerStatic as Image;
 
-class Famosos extends \App\TesteBase
+class famosos extends \App\TesteBase
 {
     /**
      * Título do teste
      */
-    public $titulo = 'O que os famosos estão falando sobre você no whatsapp?';
+    public $titulo = 'Quais Famosos estão te xavecando no whatsapp?';
 
     /**
      * Capa do teste
@@ -19,7 +19,7 @@ class Famosos extends \App\TesteBase
     /**
      * Descrição do teste
      */
-    public $descricao = 'Clique aqui e descubra agora.';
+    public $descricao = 'Faça o teste e veja quais famosos estão te enviando mensagens no WhatsAPP';
 
     /**
      * O teste retornará o mesmo resultado para o usuário que refazer?

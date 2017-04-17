@@ -4,22 +4,22 @@ namespace App\Testes;
 use App\Libraries\Filters\RoundFilter;
 use Intervention\Image\ImageManagerStatic as Image;
 
-class CoelhoPascoa extends \App\TesteBase
+class gemeos extends \App\TesteBase
 {
     /**
      * Título do teste
      */
-    public $titulo = 'O que o coelhinho da Páscoa vai trazer pra você?';
+    public $titulo = 'Como seria seus filhos Gêmeos?';
 
     /**
      * Capa do teste
      */
-    public $capa = 'o-que-o-coelhinho-da-pascoa-vai-trazer-para-voce/coelinho230317.jpg';
+    public $capa = 'como-seria-seus-filhos-gemeos/gemeoscapa.jpg';
 
     /**
      * Descrição do teste
      */
-    public $descricao = 'Faça o teste e veja o que o coelhinho da Páscoa vai trazer para você!';
+    public $descricao = 'Faça o teste e veja como seria seus filhos gêmeos';
 
     /**
      * O teste retornará o mesmo resultado para o usuário que refazer?
@@ -43,11 +43,11 @@ class CoelhoPascoa extends \App\TesteBase
         ];
 
         // Foto de fundo
-        $img = Image::make(public_path('upload/o-que-o-coelhinho-da-pascoa-vai-trazer-para-voce/resposta.jpg'));
+        $img = Image::make(public_path('upload/como-seria-seus-filhos-gemeos/bebe01.jpg'));
 
-        // Foto do facebook
+         //Foto do facebook
 		
-        $photo = Image::make($this->facebook->foto());
+        $foto_facebook = Image::make($this->facebook->foto());
 		
 		
 		
