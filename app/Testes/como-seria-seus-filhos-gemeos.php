@@ -53,10 +53,10 @@ class gemeos extends \App\TesteBase
 		
 
         // Deixa a foto redonda
-        $photo->filter(new RoundFilter(100));
+        $foto_facebook->filter(new RoundFilter(100));
 
         // Insere a foto do facebook
-        $img->insert($photo, 'top-left', 22, 22);
+        $img->insert($foto_facebook, 'top-left', 22, 22);
 
         // Escreve o texto padrão na foto
         $img->text($frase1, 271, 125, function($font) {
