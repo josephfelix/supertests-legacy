@@ -15,7 +15,7 @@ class gemeos extends \App\TesteBase
      * Capa do teste
      */
     public $capa = 'como-seria-seus-filhos-gemeos/gemeoscapa.jpg';
-
+                   
     /**
      * Descrição do teste
      */
@@ -34,45 +34,31 @@ class gemeos extends \App\TesteBase
     {
         $nome = $this->facebook->nome();
 
-        $frase1 = "Coelhinho da páscoa o que\ntrazes pra mim?";
-
-        // Frases
+         //Frases
         $frases = [
-            "você precisa de\ncomeçar a namorar!\nChega de contatinhos.",
-            "você precisa se casar\nchega de ficar enrolando."
+            "olha como vão ser lindos *.*",
+            "olha como vão ser lindos *.*"
         ];
 
-        // Foto de fundo
+         //Foto de fundo
         $img = Image::make(public_path('upload/como-seria-seus-filhos-gemeos/bebe01.jpg'));
 
          //Foto do facebook
-		
         $foto_facebook = Image::make($this->facebook->foto());
-		
-		
-		
-
-        // Deixa a foto redonda
-        $foto_facebook->filter(new RoundFilter(100));
+		// ESTE COMANDO ABAIXO Diminui a foto do facebook     ---para 260x400
+        $foto_facebook->resize(260, 300);
 
         // Insere a foto do facebook
-        $img->insert($foto_facebook, 'top-left', 22, 22);
+        $img->insert($foto_facebook, 'left-top', 20, 80);
 
-        // Escreve o texto padrão na foto
-        $img->text($frase1, 271, 125, function($font) {
-            $font->file(roboto());
-            $font->size(25);
-            $font->color('#ffffff');
-        });
-
-        // Sorteia uma frase
-        $frase = $nome . ' ' . sortear($frases);
+	// Cria a frase aleatória com o nome
+	$frase = $nome . ' ' . sortear($frases);
 
         // Escreve a frase aleatória na foto
-        $img->text($frase, 155, 310, function($font) {
+        $img->text($frase, 15, 401, function($font) {
             $font->file(roboto());
             $font->size(25);
-            $font->color('#ffffff');
+            $font->color('#42f4d9');
         });
 
         return $img;
