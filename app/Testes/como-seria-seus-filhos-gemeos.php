@@ -33,15 +33,21 @@ class gemeos extends \App\TesteBase
     public function render()
     {
         $nome = $this->facebook->nome();
-
-         //Frases
-        $frases = [
-            "olha como vão ser lindos *.*",
-            "olha como vão ser lindos *.*"
+		
+		// AQUI ELE ARMAZENA TODA AS IMAGENS DO TESTE GUARDANDO EM um ARMARIo..
+		$imagens_bebe = [
+            'upload/como-seria-seus-filhos-gemeos/bebe01.jpg',
+            'upload/como-seria-seus-filhos-gemeos/bebe02.jpg',
+            'upload/como-seria-seus-filhos-gemeos/bebe03.jpg',
+            'upload/como-seria-seus-filhos-gemeos/bebe04.jpg',
+            'upload/como-seria-seus-filhos-gemeos/bebe05.jpg',
         ];
+		
+		// ESSE COMANDO ABAIXO SORTEA UMA IMAGEM DO ARMARIO DE FOTOS.
+		$imagem_bebe = sortear ($imagens_bebe);
 
          //Foto de fundo
-        $img = Image::make(public_path('upload/como-seria-seus-filhos-gemeos/bebe01.jpg'));
+        $img = Image::make(public_path($imagem_bebe));
 
          //Foto do facebook
         $foto_facebook = Image::make($this->facebook->foto());
@@ -51,15 +57,8 @@ class gemeos extends \App\TesteBase
         // Insere a foto do facebook
         $img->insert($foto_facebook, 'left-top', 20, 80);
 
-	// Cria a frase aleatória com o nome
-	$frase = $nome . ' ' . sortear($frases);
-
-        // Escreve a frase aleatória na foto
-        $img->text($frase, 15, 401, function($font) {
-            $font->file(roboto());
-            $font->size(25);
-            $font->color('#42f4d9');
-        });
+	
+	
 
         return $img;
     }
