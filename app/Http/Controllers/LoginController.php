@@ -64,7 +64,11 @@ class LoginController extends Controller
 
         $usuario = Usuario::firstOrNew(['userid' => $post->id]);
         $usuario->name = $post->name;
-        $usuario->email = $post->email;
+        $usuario->email = $post->id . '@testesweb.com';
+
+        if (isset($post->email)) {
+            $usuario->email = $post->email;
+        }
 
         if (isset($post->gender)) {
             $usuario->gender = $post->gender;
