@@ -81,15 +81,6 @@ class CacheTest extends Command
     }
 
     /**
-     * Apaga todos os testes antes de rodar o deploy
-     * @return void
-     */
-    private function deleteTests()
-    {
-        Teste::query()->truncate();
-    }
-
-    /**
      * Execute the console command.
      * @return mixed
      */
@@ -98,7 +89,6 @@ class CacheTest extends Command
         $this->info('+------------------------------------------------+');
         $this->info('-------- Iniciando cache de testes --------------');
         $this->readTests();
-        $this->deleteTests();
         if (!empty($this->tests)) {
             foreach ($this->tests as $test) {
                 if ($this->insertNewTest($test)) {
