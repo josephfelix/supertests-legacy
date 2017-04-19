@@ -4,8 +4,59 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a4587572f6ee3d6a091f12a211db8254",
+    "content-hash": "798bd28f11b7f92fbf73e9ea8c9fd927",
     "packages": [
+        {
+            "name": "andrewgjohnson/imagettftextblur",
+            "version": "v1.2.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/andrewgjohnson/imagettftextblur.git",
+                "reference": "bd4cd65c4eb8ed9aae48a08de882df7006fc095a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/andrewgjohnson/imagettftextblur/zipball/bd4cd65c4eb8ed9aae48a08de882df7006fc095a",
+                "reference": "bd4cd65c4eb8ed9aae48a08de882df7006fc095a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gd": "*",
+                "php": ">=5.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "source/imagettftextblur.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andrew G Johnson",
+                    "email": "andrew@andrewgjohnson.com",
+                    "homepage": "http://www.andrewgjohnson.com/",
+                    "role": "Project Lead"
+                },
+                {
+                    "name": "Philip van Heemstra",
+                    "homepage": "https://github.com/vHeemstra",
+                    "role": "Contributor"
+                }
+            ],
+            "description": "imagettftextblur is a drop in replacement for imagettftext with added parameters to add blur, glow and shadow effects to your PHP GD images",
+            "homepage": "https://github.com/andrewgjohnson/imagettftextblur",
+            "keywords": [
+                "gd",
+                "graphics",
+                "image",
+                "images"
+            ],
+            "time": "2017-03-17T17:03:55+00:00"
+        },
         {
             "name": "artesaos/seotools",
             "version": "0.10.0",
@@ -2417,12 +2468,12 @@
             "version": "0.9.9",
             "source": {
                 "type": "git",
-                "url": "https://github.com/padraic/mockery.git",
+                "url": "https://github.com/mockery/mockery.git",
                 "reference": "6fdb61243844dc924071d3404bb23994ea0b6856"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/padraic/mockery/zipball/6fdb61243844dc924071d3404bb23994ea0b6856",
+                "url": "https://api.github.com/repos/mockery/mockery/zipball/6fdb61243844dc924071d3404bb23994ea0b6856",
                 "reference": "6fdb61243844dc924071d3404bb23994ea0b6856",
                 "shasum": ""
             },

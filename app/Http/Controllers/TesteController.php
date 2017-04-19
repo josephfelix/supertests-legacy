@@ -176,11 +176,22 @@ class TesteController extends Controller
             ]);
         }
 
+        // Busca o nome do usuário
+        list($name) = explode(' ', $request->session()->get('name'));
+
+        // Busca a mensagem final
+        $message = $teste->message;
+
+        if (!empty($message)) {
+            $message = str_replace('[[nome]]', $name, $message);
+        }
+
         // Caso contrário, mostra o resultado
         return view('teste/result', [
-            'id'   => $teste->id,
-            'guid' => $guid,
-            'hash' => $hash
+            'id'      => $teste->id,
+            'guid'    => $guid,
+            'message' => $message,
+            'hash'    => $hash
         ]);
     }
 }

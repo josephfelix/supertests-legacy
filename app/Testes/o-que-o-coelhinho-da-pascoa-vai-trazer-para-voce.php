@@ -17,6 +17,11 @@ class CoelhoPascoa extends \App\TesteBase
     public $capa = 'o-que-o-coelhinho-da-pascoa-vai-trazer-para-voce/coelinho230317.jpg';
 
     /**
+     * Mensagem que será exibida após o resultado
+     */
+    public $mensagem = '[[nome]], olha o que o coelho trouxe para você, gostou?';
+
+    /**
      * Descrição do teste
      */
     public $descricao = 'Faça o teste e veja o que o coelhinho da Páscoa vai trazer para você!';

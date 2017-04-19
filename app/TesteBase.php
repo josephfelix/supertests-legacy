@@ -11,6 +11,7 @@ abstract class TesteBase implements TesteInterface
     public $titulo = 'Teste sem título';
     public $capa = 'http://placehold.it/800x420';
     public $descricao = '';
+    public $mensagem = '';
     public $unico = false;
 
     /**
@@ -61,5 +62,14 @@ abstract class TesteBase implements TesteInterface
     public function getUnique()
     {
         return $this->unico;
+    }
+
+    /**
+     * Retorna a mensagem final exibida após fazer o teste
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->mensagem;
     }
 }

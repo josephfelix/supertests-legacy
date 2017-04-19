@@ -17,6 +17,11 @@ class Salario extends \App\TesteBase
     public $capa = 'qual-deveria-ser-seu-salario/capa.jpg';
 
     /**
+     * Mensagem que será exibida após o resultado
+     */
+    public $mensagem = '[[nome]], é isto que você deveria estar ganhando. Gostou?';
+
+    /**
      * Descrição do teste
      */
     public $descricao = 'Faça o teste e descubra quanto deveria ser realmente seu salário';

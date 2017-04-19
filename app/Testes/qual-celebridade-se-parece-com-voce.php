@@ -17,6 +17,11 @@ class Celebridade extends \App\TesteBase
     public $capa = 'qual-celebridade-se-parece-com-voce/celebridadecapa.jpg';
 
     /**
+     * Mensagem que será exibida após o resultado
+     */
+    public $mensagem = '[[nome]], esta é a celebridade que você se parece. Gostou?';
+
+    /**
      * Descrição do teste
      */
     public $descricao = 'Descubra agora qual celebridade se parece mais com você!';

@@ -15,7 +15,12 @@ class gemeos extends \App\TesteBase
      * Capa do teste
      */
     public $capa = 'como-seria-seus-filhos-gemeos/gemeoscapa.jpg';
-                   
+
+    /**
+     * Mensagem que será exibida após o resultado
+     */
+    public $mensagem = '[[nome]], olha como seria seus filhos, gostou?';
+
     /**
      * Descrição do teste
      */

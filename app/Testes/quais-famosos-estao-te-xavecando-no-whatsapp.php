@@ -17,6 +17,11 @@ class famosos extends \App\TesteBase
     public $capa = 'o-que-os-famosos-estao-falando-sobre-voce/whatsappcapa.jpg';
 
     /**
+     * Mensagem que será exibida após o resultado
+     */
+    public $mensagem = '[[nome]], olha o que os famosos estão falando sobre você, gostou?';
+
+    /**
      * Descrição do teste
      */
     public $descricao = 'Faça o teste e veja quais famosos estão te enviando mensagens no WhatsAPP';

@@ -74,6 +74,7 @@ class CacheTest extends Command
         $new->title = $instance->getTitle();
         $new->cover = $instance->getCover();
         $new->description = $instance->getDescription();
+        $new->message = $instance->getMessage();
         $new->slug = $test->slug;
         $new->class = $test->class;
         return $new->save();

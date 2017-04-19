@@ -18,9 +18,15 @@
                         COMPARTILHAR
                     </button>
 
+                    @if (!empty($message))
+                        <h3 class="result-message"><strong>{{$message}}</strong></h3>
+                    @endif
+
                     <div class="result-image">
                         <img ng-click="shareFacebook()" src="{{asset("/r/{$hash}.jpg")}}" width="100%"/>
                     </div>
+
+                    <h3 class="result-message"><strong>Gostou? Compartilhe com seus amigos.</strong></h3>
 
                     <div class="result-share">
 
