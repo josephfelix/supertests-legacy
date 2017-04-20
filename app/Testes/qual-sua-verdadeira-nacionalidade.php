@@ -26,7 +26,7 @@ class nacionalidade extends \App\TesteBase
     /**
      * Descrição do teste
      */
-    public $descricao = 'Clique aqui e veja qual é realmente sua nacionalidade';
+    public $descricao = 'Faça o teste e veja qual é a sua nacionalidade';
 
     /**
      * O teste retornará o mesmo resultado para o usuário que refazer?
