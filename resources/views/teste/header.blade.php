@@ -54,6 +54,7 @@
         }(document, 'script', 'facebook-jssdk'));
     </script>
 
+    @include('partials.onesignal')
     @include('partials.analytics')
 </head>
 

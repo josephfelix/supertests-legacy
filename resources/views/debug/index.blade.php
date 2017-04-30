@@ -28,6 +28,7 @@
     <!-- Controllers -->
     <script type="text/javascript" src="{{ asset('js/controllers/DebugController.js') }}"></script>
 
+    @include('partials.onesignal')
     @include('partials.analytics')
 </head>
 
