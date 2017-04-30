@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/testesweb.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/mobile.css') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
 
