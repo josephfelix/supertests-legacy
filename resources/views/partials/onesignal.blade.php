@@ -4,7 +4,7 @@
     OneSignal.push(["init", {
         appId: "a1f67d52-6197-4f15-8e19-f505dcd3e6b8",
         subdomainName: 'testesweb',
-        autoRegister: false,
+        autoRegister: true,
         httpPermissionRequest: {
             enable: true
         },
